@@ -7,6 +7,7 @@ models:
         tests:
           - unique
           - not_null
+        description: The primary key for customers.
       - name: last_name
         tests:
           - not_null
@@ -16,7 +17,9 @@ models:
         tests:
           - unique
           - not_null
+        description: The primary key for orders.
       - name: status
+        description: '{{ doc("order_status") }}'
         tests:
           - accepted_values:
               values:
@@ -26,6 +29,7 @@ models:
                 - return_pending
                 - placed
       - name: customer_id
+        description: Foreign key to stg_customers.customer_id.
         tests:
             - not_null
             - relationships:
