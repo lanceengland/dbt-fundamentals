@@ -6,6 +6,6 @@ with orders as (
         order_date,
         status
     from
-        `dataset_dbt.orders`
+        {{ source('jaffle_shop', 'orders') }}
 )
 select * from orders

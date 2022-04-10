@@ -6,4 +6,4 @@ select
     amount / 100 as amount,
     created as created_at
 from
-     `dataset_dbt.stripe_payments`
+     {{ source('jaffle_shop', 'stripe_payments') }}
