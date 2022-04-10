@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: learn-dbt-346113
+    schema: dataset_dbt
+    tables:
+      - name: customers
+      - name: orders
